@@ -840,7 +840,7 @@ for iteration in range(start_epoch +1, n_iter):
     if iteration % 100 == 0:
 
         #save the model at the checkpoint
-        save_checkpoint(neural_radiance_field, optimizer, iteration, loss, path=f"checkpoint_epoch_{iteration}.pth")
+        save_checkpoint(neural_radiance_field, optimizer, iteration, loss, path=os.path.join(SAVED_DIR, f"checkpoint_epoch_{iteration}.pth"))
 
         # Render and display preview using the show_full_render function
         show_idx = torch.randperm(len(target_cameras))[:1]
