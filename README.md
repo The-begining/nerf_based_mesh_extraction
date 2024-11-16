@@ -1,9 +1,12 @@
 # nerf_based_mesh_extraction
 
 
-file order: /n
+file order: 
+
 project/
+
 ├── script.py                # Your main script
+
 ├── dataset/
 │   └── pastry_new/
 │       ├── 3DPastry001_HQ-1K-JPG.obj
