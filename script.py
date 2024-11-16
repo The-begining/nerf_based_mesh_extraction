@@ -128,7 +128,7 @@ import matplotlib.pyplot as plt
 
 # Set the data directory to the current directory
 DATA_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "dataset")
-SUBFOLDER_PATH = os.path.join(DATA_DIR, 'pastry_new')  # Adjust this if 'pastry_new' is still relevant
+SUBFOLDER_PATH = os.path.join(DATA_DIR, 'pastry_new')  
 
 
 # Define the names of your custom files
@@ -677,8 +677,18 @@ def show_full_render(
     return fig
 
 # Paths for checkpoint files
-checkpoint_path = "checkpoint_epoch_19900.pth"
-final_model_path = "final_model.pth"
+
+
+# Define the directory for saving files
+SAVED_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "saved")
+
+# Ensure the directory exists
+os.makedirs(SAVED_DIR, exist_ok=True)
+
+# Paths to the checkpoint and final model
+checkpoint_path = os.path.join(SAVED_DIR, "checkpoint_epoch_19900.pth")
+final_model_path = os.path.join(SAVED_DIR, "final_model.pth")
+
 
 # Function to save checkpoint with ray bundle data
 def save_checkpoint(model, optimizer, epoch, loss, path):
