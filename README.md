@@ -1,7 +1,7 @@
 # nerf_based_mesh_extraction
 
 
-file order:
+file order: /n
 project/
 ├── script.py                # Your main script
 ├── dataset/
@@ -11,3 +11,5 @@ project/
 │       └── 3DPastry001_HQ-1K-JPG_Color.png
 └── output/
     └── nerf_mesh.obj
+
+pip install -r requirements.txt
