@@ -113,5 +113,12 @@ MIT License.
 ---
 
 ## **Contact**
+<<<<<<< HEAD
 
 For questions or suggestions, please contact [Shamimeh](mailto:shamimehmohajeri@gmail.com).
+=======
+For questions or suggestions, please contact:  
+- [Shamimeh](mailto:shamimehmohajeri@gmail.com)  
+- [Shubham Singh](mailto:softengg.shubham@gmail.com)  
+- [Vaskar Shrestha](mailto:vasstha01@gmail.com)
+>>>>>>> 3c48a8c318d12f93b1a778cad0cc93c5de0e8bea
