@@ -1,13 +1,11 @@
-
-
 # **NeRF Based Mesh Extraction**
 
-[![Python Version](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)  
-
+[![Python Version](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 
 ---
 
 ## **Features**
+
 - Implements Neural Radiance Fields (NeRF) using PyTorch3D.
 - Supports rendering and extracting 3D meshes.
 - Provides visualization tools for rendered and extracted data.
@@ -16,11 +14,15 @@
 ---
 
 ## **Installation**
+
 ### Prerequisites
+
 Ensure you have Python 3.9+ installed on your system.
 
 ### Steps
+
 1. Clone this repository:
+
    ```bash
    git clone https://github.com/The-begining/nerf_based_mesh_extraction.git
    cd nerf_based_mesh_extraction
@@ -34,8 +36,11 @@ Ensure you have Python 3.9+ installed on your system.
 ---
 
 ## **Usage**
+
 ### Running the Code
+
 1. Place your dataset in the `dataset` folder:
+
    ```
    dataset/
    ├── pastry_new/
@@ -45,6 +50,7 @@ Ensure you have Python 3.9+ installed on your system.
    ```
 
 2. Run the main script:
+
    ```bash
    python script.py
    ```
@@ -57,6 +63,7 @@ Ensure you have Python 3.9+ installed on your system.
 ---
 
 ## **File Structure**
+
 ```
 project/
 ├── script.py                 # Main script
@@ -68,9 +75,22 @@ project/
 └── README.md                 # Project information
 ```
 
+## **Real_time_rendering**
+
+```
+Real_time_rendering.ipynb file uses the pretrained model to showcase, that how rendering happens and our mesh extraction model to extract the mesh.
+Limitation of resources hindered the process of the testing the model to its full potential.
+However we tested with two different images and the result were satisfactory.
+
+- Notebook can be found in root directory
+- Image can be found in dataset folder
+- Results can be found in output folder
+```
+
 ---
 
 ## **Examples**
+
 - Render visualizations:
   ```python
   python script.py
@@ -81,14 +101,17 @@ project/
 ---
 
 ## **Contributing**
+
 Contributions are welcome! Feel free to fork out this project and submit pull requests.
 
 ---
 
 ## **License**
+
 MIT License.
 
 ---
 
 ## **Contact**
+
 For questions or suggestions, please contact [Shamimeh](mailto:shamimehmohajeri@gmail.com).
