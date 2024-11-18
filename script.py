@@ -904,6 +904,67 @@ with torch.no_grad():
 image_grid(rotating_nerf_frames.clamp(0., 1.).cpu().numpy(), rows=3, cols=5, rgb=True, fill=True)
 plt.show()
 
+# """ 
+# #This can be used to create video
+# import cv2
+# import numpy as np
+
+# def generate_rotating_nerf(neural_radiance_field, n_frames=50):
+#     logRs = torch.zeros(n_frames, 3, device=device)
+#     logRs[:, 1] = torch.linspace(-3.14, 3.14, n_frames, device=device)
+#     Rs = so3_exp_map(logRs)
+#     Ts = torch.zeros(n_frames, 3, device=device)
+#     Ts[:, 2] = 2.7
+#     frames = []
+#     print('Rendering rotating NeRF ...')
+#     for R, T in zip(tqdm(Rs), Ts):
+#         camera = FoVPerspectiveCameras(
+#             R=R[None],
+#             T=T[None],
+#             znear=target_cameras.znear[0],
+#             zfar=target_cameras.zfar[0],
+#             aspect_ratio=target_cameras.aspect_ratio[0],
+#             fov=target_cameras.fov[0],
+#             device=device,
+#         )
+#         frames.append(
+#             renderer_grid(
+#                 cameras=camera,
+#                 volumetric_function=neural_radiance_field.batched_forward,
+#             )[0][..., :3]
+#         )
+#     return torch.cat(frames)
+
+# def save_video(frames, filename='rotating_nerf.mp4', fps=30):
+#     print(f"Saving video to {filename}...")
+#     h, w = frames[0].shape[:2]
+#     fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Codec for .mp4 files
+#     video_writer = cv2.VideoWriter(filename, fourcc, fps, (w, h))
+
+#     for frame in frames:
+#         # Convert the frame to an appropriate format for OpenCV
+#         frame = (frame.clamp(0., 1.).cpu().numpy() * 255).astype(np.uint8)
+#         frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)  # Convert RGB to BGR for OpenCV
+#         video_writer.write(frame)
+
+#     video_writer.release()
+#     print(f"Video saved as {filename}.")
+
+# # Generate frames
+# with torch.no_grad():
+#     n_frames = 3 * 5  # Adjust the number of frames for the video
+#     rotating_nerf_frames = generate_rotating_nerf(neural_radiance_field, n_frames=n_frames)
+
+# # Display frames as a grid (optional)
+# image_grid(rotating_nerf_frames.clamp(0., 1.).cpu().numpy(), rows=3, cols=5, rgb=True, fill=True)
+# plt.show()
+
+# # Save the frames as a video
+# save_video(rotating_nerf_frames, filename='rotating_nerf.mp4', fps=30)
+
+
+# """
+
 import torch
 from skimage import measure
 from pytorch3d.structures import Meshes
